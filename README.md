@@ -5,7 +5,7 @@ netpandas
 [![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/netpandas/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/netpandas/branch/master)
 
 
-AAdd graph functionnalities to a Pandas dataframe through its extension capabilities.
+Add graph functionnalities to a Pandas dataframe through its extension capabilities.
 
 ### Copyright
 
