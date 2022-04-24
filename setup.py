@@ -1,12 +1,12 @@
 """
 netpandas
-AAdd graph functionnalities to a Pandas dataframe through its extension capabilities.
+Add graph functionnalities to a Pandas dataframe through its extension capabilities.
 """
 import sys
 from setuptools import setup, find_packages
 import versioneer
 
-short_description = "AAdd graph functionnalities to a Pandas dataframe through its extension capabilities.".split("\n")[0]
+short_description = "Add graph functionnalities to a Pandas dataframe through its extension capabilities.".split("\n")[0]
 
 # from https://github.com/pytest-dev/pytest-runner#conditional-requirement
 needs_pytest = {'pytest', 'test', 'ptr'}.intersection(sys.argv)
@@ -45,8 +45,8 @@ setup(
     setup_requires=[] + pytest_runner,
 
     # Additional entries you may want simply uncomment the lines you want and fill in the data
-    # url='http://www.my_package.com',  # Website
-    # install_requires=[],              # Required packages, pulls from pip if needed; do not use for Conda deployment
+    url='https://github.com/chourmo/netpandas',
+    install_requires=["numpy", "pandas", "scipy", "sklearn", "geopandas", "pygeos"],
     # platforms=['Linux',
     #            'Mac OS-X',
     #            'Unix',
