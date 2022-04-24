@@ -9,7 +9,7 @@ dependencies:
   - geopandas
   - pygeos
   - scipy
-  - sklearn
+  - scikit-learn
   - networkx
   - pandana
 
