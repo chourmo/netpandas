@@ -8,6 +8,14 @@ dependencies:
     # Base depends
   - python
   - pip
+  - numpy
+  - pandas
+  - geopandas
+  - pygeos
+  - scipy
+  - sklearn
+  - networkx
+  - pandana
 
     # Testing
   - pytest
