@@ -46,11 +46,7 @@ setup(
 
     # Additional entries you may want simply uncomment the lines you want and fill in the data
     url='https://github.com/chourmo/netpandas',
-<<<<<<< HEAD
-    install_requires=["numpy", "pandas", "scipy", "sklearn", "geopandas", "pygeos"],
-=======
-    install_requires=["numpy", "pandas", "scipy", "sklearn", "geopandas", "pygeos", ],
->>>>>>> 950d217fa53d94336b50bc6e447bf0a2e2530846
+    install_requires=["numpy", "pandas", "scipy", "sklearn", "geopandas", "pygeos",],
     # platforms=['Linux',
     #            'Mac OS-X',
     #            'Unix',
