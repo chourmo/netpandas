@@ -108,24 +108,3 @@ def add_paths(df1, df2):
 
     res = pd.concat([df1.explode(), df2.explode()])
     return res.groupby(level=0).agg(list)
-
-    if is_list_dtype(df1):
-        res = df1.apply(np.array).to_frame("col1")
-
-    elif isinstance(df1.iloc[0], np.ndarray):
-        res = df1.to_frame("col1")
-    else:
-        res = df1.apply(lambda x: np.array([x])).to_frame("col1")
-
-    if is_list_dtype(df2):
-        res["col2"] = df2.apply(np.array).copy()
-
-    elif isinstance(df2.iloc[0], np.ndarray):
-        res["col2"] = df2.copy()
-
-    else:
-        res["col2"] = df2.apply(lambda x: np.array([x]))
-
-    res["col1"] = res.apply(lambda x: np.append(x["col1"], x["col2"]).tolist(), axis=1)
-
-    return res["col1"]
