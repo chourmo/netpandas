@@ -46,12 +46,12 @@ setup(
 
     # Additional entries you may want simply uncomment the lines you want and fill in the data
     url='https://github.com/chourmo/netpandas',
-    install_requires=["numpy", "pandas", "scipy", "scikit-learn", "geopandas", "pygeos",],
+    install_requires=["numpy", "pandas", "scipy", "scikit-learn", "geopandas", "pygeos"],
     # platforms=['Linux',
     #            'Mac OS-X',
     #            'Unix',
     #            'Windows'],            # Valid platforms your code works on, adjust to your flavor
-    python_requires=">=3.8",          # Python version restrictions
+    python_requires=">=3.9",          # Python version restrictions
 
     # Manual control if final package is compressible or not, set False to prevent the .egg from being made
     # zip_safe=False,

@@ -1,5 +1,4 @@
-name: test
-
+name: development
 channels:
   - conda-forge
   - defaults
@@ -12,10 +11,15 @@ dependencies:
   - pandas
   - geopandas
   - pygeos
-  - scipy
   - scikit-learn
+
+    # graph
+  - scipy
   - networkx
   - pandana
+  
+    # development
+  - ipykernel
 
     # Testing
   - pytest

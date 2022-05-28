@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import array
 import numpy as np
 import pandas as pd
 import netpandas as npd
