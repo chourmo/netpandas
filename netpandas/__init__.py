@@ -24,3 +24,5 @@ from netpandas.arc import merge_arcs, sort_arcs, no_self_loop_index
 from netpandas.networkx_backend import *
 from netpandas.scipy_backend import *
 from netpandas.pandana_backend import *
+from . import _version
+__version__ = _version.get_versions()['version']

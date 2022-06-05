@@ -4,4 +4,4 @@ include CODE_OF_CONDUCT.md
 include versioneer.py
 
 graft netpandas
-global-exclude *.py[cod] __pycache__ *.so
+global-exclude *.py[cod] __pycache__ *.soinclude netpandas/_version.py
