@@ -7,6 +7,8 @@ netpandas
 
 Add graph functionnalities to a Pandas dataframe through its extension capabilities.
 
+This is an __experimental__ package.
+
 ## Description
 
 **Netpandas** adds graph functionalities on a standard pandas dataframe by a column of source-target node ids. Thus, the data model is edge-based, directed or not.
