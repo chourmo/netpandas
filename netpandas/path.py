@@ -61,7 +61,7 @@ def expand_paths(paths, ndf, path_col=None):
     df = npd.set_network(
         df, directed=True, source="_s", target="_t", edge_name=ndf.net.name
     )
-
+    
     df = pd.merge(df, ndf, on=ndf.net.name, how="left").set_index("edge_id")
     df.index.name = paths.index.name
 
@@ -78,7 +78,6 @@ def paths_distance(paths, ndf, weight):
     find distance on paths, based on ndf netdataframe and weight column
     returns a Series with same index as paths
     """
-
     df = expand_paths(paths, ndf)[[weight]]
     df = df.groupby(level=0)[weight].sum()
 

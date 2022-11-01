@@ -16,7 +16,7 @@ EDGE_NAME = "edge"
 
 
 def set_network(
-    df, directed, source=None, target=None, edge=None, edge_name=EDGE_NAME, drop=True
+    df, directed=False, source=None, target=None, edge=None, edge_name=EDGE_NAME, drop=True
 ):
     """
     Set network attributes in a dataframe
@@ -336,7 +336,7 @@ class NetworkAccessor(
 
     def has_any_nodes(self, nodes):
         """
-        returns a boolean series if node is in an edge source or target
+        returns a boolean series if nodes are in an edge source or target
         """
 
         return self.sources.isin(nodes) | self.targets.isin(nodes)
