@@ -149,7 +149,7 @@ def _topological_arc_pos(ndf, arcid, source=None, target=None):
     starts = _start_edge_of_arc(df, "_simpid")
 
     res = []
-    for ix, start in starts.iteritems():
+    for ix, start in starts.items():
         res.extend(_topological_index(d[ix], start, ix))
 
     res = pd.Series(data=res).sort_values()
