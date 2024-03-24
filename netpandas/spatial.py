@@ -4,7 +4,7 @@ import array
 import numpy as np
 import pandas as pd
 import netpandas as npd
-import pygeos as pg
+import shapely as sh
 
 from sklearn.cluster import DBSCAN
 from sklearn.neighbors import NearestNeighbors
@@ -85,7 +85,6 @@ class SpatialFunctions(object):
         points = pd.concat([points, df.geometry.interpolate(1, normalized=True)])
 
         return points.sort_index()
-
 
     def nodes_at_distance(self, geoms, distance, sort=True, closest=False):
         """
@@ -172,11 +171,9 @@ class SpatialFunctions(object):
 
         return pts.loc[pts.clusters != -1]["clusters"]
 
-    
     # ----------------------
     # edge functions
     # ----------------------
-
 
     def edges_at_distance(self, geoms, distance, k_nearest=None, edge_attrs=None):
         """
@@ -250,6 +247,7 @@ class SpatialFunctions(object):
 # create network source and target from geodataframe
 # -------------------------
 
+
 def connect_geodataframe(gdf, distance):
     """
     gdf : geopandas dataframe of linestrings
@@ -308,27 +306,9 @@ def connect_geodataframe(gdf, distance):
 # other functions
 
 
-def _as_geometry_array(geometry):
-    """Convert geometry into a numpy array of PyGEOS geometries.
-
-    Args :
-    geometry
-        An array-like of PyGEOS geometries
-        or a GeoPandas GeoSeries/GeometryArray.
-    """
-    if isinstance(geometry, np.ndarray):
-        return geometry
-    elif isinstance(geometry, gpd.GeoSeries):
-        return geometry.values.data
-    elif isinstance(geometry, array.GeometryArray):
-        return geometry.data
-    else:
-        return np.asarray(geometry)
-
-
 def linemerge(gdf):
-    geom = pg.multilinestrings(_as_geometry_array(gdf), indices=gdf.index.to_numpy())
-    geom = pg.line_merge(geom)
+    geom = sh.multilinestrings(gdf.geometry.values.data, indices=gdf.index.to_numpy())
+    geom = sh.line_merge(geom)
     index = gdf.index.drop_duplicates()
     return gpd.GeoSeries(data=geom, index=index, crs=gdf.crs)
 
@@ -337,4 +317,5 @@ def reverse(geom):
     """
     return the geometries of a GeoSeries in reverse direction
     """
-    return pg.reverse(_as_geometry_array(geom))
+    geom = gdf.geometry.values.data
+    return sh.reverse(geom)
