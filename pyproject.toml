@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netpandas"
+version = "0.1.0"
+authors = [{ name = "Vincent Tinet" }]
+description = "Add graph functionnalities to a Pandas dataframe through its extension capabilities"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "scikit-learn",
+    "geopandas",
+    "shapely",
+    "pandana",
+    "networkx",
+]
+
+[project.urls]
+Homepage = "https://github.com/chourmo/netpandas"
+Issues = "https://github.com/chourmo/netpandas/issues"

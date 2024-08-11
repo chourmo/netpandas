@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import numpy as np
 import pandas as pd
 import netpandas as npd
 
@@ -102,7 +101,6 @@ def make_path(predecessors, source, target):
 def add_paths(df1, df2):
     """
     append df2 Series to df1 Series in a list Series
-    Series may be of lists, scalars or np.arrays
     """
 
     res = pd.concat([df1.explode(), df2.explode()])

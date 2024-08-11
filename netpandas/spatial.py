@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import array
-import numpy as np
 import pandas as pd
 import netpandas as npd
 import shapely as sh
@@ -16,9 +14,6 @@ try:
     HAS_SPATIAL = True
 except ImportError:
     HAS_SPATIAL = False
-
-# temporary solution before geopandas sindex has a nearest function
-import scipy.spatial as sp
 
 GEOMETRY_NAME = "geometry"
 NODE_ID_NAME = "nodeid"
@@ -99,7 +94,7 @@ class SpatialFunctions(object):
         """
 
         df_g = geoms.copy()
-        if type(df_g) == gpd.geoseries.GeoSeries:
+        if isinstance(df_g, gpd.geoseries.GeoSeries):
             df_g = gpd.GeoDataFrame(geometry=df_g)
 
         df_g = df_g.rename_geometry("ref_geom")
@@ -207,10 +202,10 @@ class SpatialFunctions(object):
 
         if edge_attrs is None:
             edges = edges[[edges.geometry.name, self.name]]
-        elif type(edge_attrs) == list:
+        elif isinstance(edge_attrs, list):
             cols = edge_attrs + [edges.geometry.name, self.name]
             edges = edges[cols]
-        elif type(edge_attrs) == str:
+        elif isinstance(edge_attrs, str):
             cols = [edge_attrs, edges.geometry.name, self.name]
             edges = edges[cols]
 
