@@ -313,7 +313,7 @@ def linemerge(gdf):
     return gpd.GeoSeries(data=geom, index=index, crs=gdf.crs)
 
 
-def reverse(geom):
+def reverse(gdf):
     """
     return the geometries of a GeoSeries in reverse direction
     """
