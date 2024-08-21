@@ -1,10 +1,9 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=64", "setuptools_scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "netpandas"
-version = "0.1.0"
 authors = [{ name = "Vincent Tinet" }]
 description = "Add graph functionnalities to a Pandas dataframe through its extension capabilities"
 readme = "README.md"
@@ -24,6 +23,9 @@ dependencies = [
     "pandana",
     "networkx",
 ]
+dynamic = ["version"]
+
+[tool.setuptools_scm]
 
 [project.urls]
 Homepage = "https://github.com/chourmo/netpandas"
