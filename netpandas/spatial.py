@@ -302,7 +302,7 @@ def connect_geodataframe(gdf, distance):
 
 
 def linemerge(gdf):
-    geom = sh.multilinestrings(gdf.geometry.values.data, indices=gdf.index.to_numpy())
+    geom = sh.multilinestrings(gdf.geometry.array, indices=gdf.index.to_numpy())
     geom = sh.line_merge(geom)
     index = gdf.index.drop_duplicates()
     return gpd.GeoSeries(data=geom, index=index, crs=gdf.crs)
@@ -312,5 +312,5 @@ def reverse(gdf):
     """
     return the geometries of a GeoSeries in reverse direction
     """
-    geom = gdf.geometry.values.data
+    geom = gdf.geometry.array
     return sh.reverse(geom)
